@@ -9,6 +9,11 @@ jobs:
       name: tests
       runs-on: ubuntu-latest
       steps:
+        - uses: actions/checkout@v3
+        - name: Set up Node.js version
+          uses: actions/setup-node@v1
+          with:
+            node-version: '20.12.2'
         - name: unit
           run: ls && pwd
         - name: e2e
