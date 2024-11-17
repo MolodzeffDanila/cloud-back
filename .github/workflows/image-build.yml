@@ -5,6 +5,14 @@ on:
       - main
       - docker
 jobs:
+    test:
+      name: tests
+      runs-on: ubuntu-latest
+      steps:
+        - name: unit
+          run: npm run test
+        - name: e2e
+          run: npm run test:e2e
     build:
       name: push docker image to docker hub
       runs-on: ubuntu-latest
