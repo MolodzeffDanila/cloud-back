@@ -14,8 +14,10 @@ jobs:
           uses: actions/setup-node@v1
           with:
             node-version: '20.12.2'
+        - name: prepare
+          run: npm install
         - name: unit
-          run: ls && pwd
+          run: npm run test
         - name: e2e
           run: npm run test:e2e
     build:
