@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package*.json ./
 
 FROM base as builder
-WORKDIR /
+WORKDIR /app
 RUN npm ci
 COPY . .
 
