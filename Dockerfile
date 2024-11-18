@@ -1,10 +1,10 @@
 FROM node:22-alpine as base
 RUN apk add --no-cache g++ make py3-pip libc6-compat
-WORKDIR /app
+WORKDIR /
 COPY package*.json ./
 
 FROM base as builder
-WORKDIR /app
+WORKDIR /
 RUN npm ci
 COPY . .
 
