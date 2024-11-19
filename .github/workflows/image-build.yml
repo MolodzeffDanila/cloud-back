@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Deploy in cloud-infra
-        uses: peter-evans/workflow-dispatch@v1  # Используем сторонний action для вызова workflow
+        uses: peter-evans/repository-dispatch@v3 # Используем сторонний action для вызова workflow
         with:
           repository: MolodzeffDanila/cloud-infra  # Замените на имя владельца и репозитория
           ref: refs/heads/main  # Бранч в другом репозитории (например, main)
