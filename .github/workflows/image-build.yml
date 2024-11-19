@@ -37,11 +37,3 @@ jobs:
         - name: push the docker image
           id: push-docker-image
           run: docker push ${{secrets.DOCKERHUB_USERNAME}}/cloud-back:latest
-    notify-cloud-infra:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Notify cloud-infra pipeline
-          run: |
-            curl -X POST https://api.github.com/repos/MolodzeffDanila/cloud-infra/actions/workflows/ci.yml/dispatches \
-              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-              -d '{"ref": "main"}'
