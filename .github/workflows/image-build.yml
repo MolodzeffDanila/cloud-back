@@ -11,7 +11,6 @@ on:
 jobs:
   build:
     name: push docker image to docker hub
-    needs: unit
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
