@@ -1,8 +1,4 @@
-name: Build Docker Image
-on:
-  push:
-    branches:
-      - main
+name: Unit Tests
 jobs:
     test:
       name: tests
@@ -19,8 +15,15 @@ jobs:
           run: npm run test
         - name: e2e
           run: npm run test:e2e
+name: Build Docker Image
+on:
+  push:
+    branches:
+      - main
+jobs:
     build:
       name: push docker image to docker hub
+      needs: test
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
