@@ -29,11 +29,11 @@ jobs:
         run: docker push ${{secrets.DOCKERHUB_USERNAME}}/cloud-back:latest
   trigger:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Trigger Deploy in cloud-infra
-        uses: peter-evans/repository-dispatch@v3 # Используем сторонний action для вызова workflow
+        uses: peter-evans/repository-dispatch@v3
         with:
-          repository: MolodzeffDanila/cloud-infra  # Замените на имя владельца и репозитория
-          ref: refs/heads/main  # Бранч в другом репозитории (например, main)
-          workflow: deploy-vps.yaml  # Имя workflow в другом репозитории
+          repository: MolodzeffDanila/cloud-infra
           token: ${{ secrets.GIT_HUB_TOKEN }}
+          event-type: my-event
