@@ -36,4 +36,4 @@ jobs:
         with:
           repository: MolodzeffDanila/cloud-infra
           token: ${{ secrets.GIT_HUB_TOKEN }}
-          event-type: workflow_dispatch
+          event-type: redeploy-on-vps
