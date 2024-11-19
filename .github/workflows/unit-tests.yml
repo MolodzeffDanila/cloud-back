@@ -1,4 +1,5 @@
 name: Unit Tests Run
+on: push
 jobs:
   unit:
     name: tests
