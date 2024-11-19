@@ -7,6 +7,8 @@ FROM base as builder
 WORKDIR /app
 RUN npm ci
 COPY . .
+RUN npm run build
+
 
 EXPOSE 3001
 
