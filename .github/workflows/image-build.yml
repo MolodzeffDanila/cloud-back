@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-      - yaml
   workflow_run:
     workflows: ["Unit Tests Run"]
     types:
