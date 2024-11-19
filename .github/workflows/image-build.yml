@@ -19,8 +19,8 @@ jobs:
       name: push docker image to docker hub
       on:
         push:
-            branches:
-              - main
+          branches:
+            - main
       needs: unit
       runs-on: ubuntu-latest
       steps:
