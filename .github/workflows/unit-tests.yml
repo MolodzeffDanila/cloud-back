@@ -1,0 +1,17 @@
+name: Unit Tests Run
+jobs:
+  unit:
+    name: tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js version
+        uses: actions/setup-node@v1
+        with:
+          node-version: '20.12.2'
+      - name: prepare
+        run: npm install
+      - name: unit
+        run: npm run test
+      - name: e2e
+        run: npm run test:e2e
