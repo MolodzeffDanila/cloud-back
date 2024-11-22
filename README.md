@@ -24,3 +24,13 @@ $ npm run start:prod
 
 ## Swagger
 Swagger с описанием api проекта можно найти по URL /swagger
+
+## Автотесты
+```bash
+# юнит-тесты
+$ npm run test
+# е2е тесты
+$ npm run test:e2e
+# анализ покрытия
+$ npm run test:cov
+```
